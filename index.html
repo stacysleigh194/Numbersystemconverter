@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#6c5ce7">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <title>Number System Converter</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Number System Converter</h1>
+
+        <p class="subtitle">
+            Convert numbers between different number systems
+        </p>
+
+        <div class="converter">
+
+            <label>From</label>
+
+            <select id="fromBase">
+                <option value="2">Binary</option>
+                <option value="8">Octal</option>
+                <option value="10" selected>Decimal</option>
+                <option value="16">Hexadecimal</option>
+            </select>
+
+            <input
+                type="text"
+                id="numberInput"
+                placeholder="Enter number"
+            >
+
+            <button onclick="convertNumber()">
+                Convert
+            </button>
+
+            <label>To</label>
+
+            <select id="toBase">
+                <option value="2">Binary</option>
+                <option value="8">Octal</option>
+                <option value="10">Decimal</option>
+                <option value="16">Hexadecimal</option>
+            </select>
+
+            <div class="result">
+                <p>Result:</p>
+                <h2 id="result">---</h2>
+            </div>
+
+            <button class="swap" onclick="swapBases()">
+                ⇄ Swap
+            </button>
+
+        </div>
+
+        <div class="info">
+
+            <h2>Examples</h2>
+
+            <p>25 Decimal → 11001 Binary</p>
+            <p>25 Decimal → 31 Octal</p>
+            <p>25 Decimal → 19 Hexadecimal</p>
+            <p>1011 Binary → 11 Decimal</p>
+            <p>FF Hexadecimal → 255 Decimal</p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
+
+</body>
+</html>
